@@ -1,0 +1,12 @@
+# Node/TS stuff
+node_modules/
+dist/
+.nyc_output/
+.log
+
+# Environment and Nix stuff
+.direnv/
+/result
+
+# Others
+DS_Store
