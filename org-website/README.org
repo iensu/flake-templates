@@ -1,0 +1,28 @@
+#+title: Org Website
+#+author: <name>
+#+language: en
+#+options: num:3 H:4
+#+export_file_name: dist/index.html
+#+startup: overview
+
+This website was generate from an Org-mode file.
+
+*  Code block examples
+:PROPERTIES:
+:CUSTOM_ID: code-block-examples
+:END:
+
+#+caption: Shell code block
+#+begin_src shell
+  echo "It supports code blocks"
+#+end_src
+
+#+caption: JavaScript code block
+#+begin_src js -n
+  function jsFunc() {
+    const x = 42;
+    console.log(x);
+  }
+
+  jsFunc();
+#+end_src

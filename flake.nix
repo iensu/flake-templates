@@ -4,6 +4,11 @@
   outputs = { self }: {
 
     templates = {
+      org-website = {
+        path = ./org-website;
+        description = "Build a website using Org-mode";
+      };
+
       python-fastapi = {
         path = ./python-fastapi;
         description = "Development-centered Python Fastapi API setup";
