@@ -48,6 +48,8 @@
           };
           defaultApp = self.apps.${system}.serve;
 
-          devShell = import ./shell.nix { inherit pkgs buildInputs; };
+          devShell = pkgs.mkShell {
+            buildInputs = buildInputs ++ [ serve ];
+          };
         });
 }
