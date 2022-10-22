@@ -13,8 +13,7 @@ jobs:
 
     - run: nix build .#
 
-    - uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: result
+    - uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        branch: gh-pages
+        folder: result
