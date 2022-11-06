@@ -14,6 +14,11 @@
         description = "Development-centered Python Fastapi API setup";
       };
 
+      rust-bin = {
+        path = ./rust-bin;
+        description = "Naersk-based Rust flake to build binary applications";
+      };
+
       typescript-fastify = {
         path = ./typescript-fastify;
         description = "Development-centered Fastify API setup using Typescript";
