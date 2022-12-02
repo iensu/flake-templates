@@ -23,6 +23,11 @@
         path = ./typescript-fastify;
         description = "Development-centered Fastify API setup using Typescript";
       };
+
+      zig-bin = {
+        path = ./zig-bin;
+        description = "Zig binary application.";
+      };
     };
   };
 }
