@@ -9,6 +9,11 @@
         description = "Build a website using Org-mode";
       };
 
+      guile-http = {
+        path = ./guile-http;
+        description = "Guile project prepared for HTTP stuff";
+      };
+
       python-fastapi = {
         path = ./python-fastapi;
         description = "Development-centered Python Fastapi API setup";
