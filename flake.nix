@@ -24,6 +24,11 @@
         description = "Naersk-based Rust flake to build binary applications";
       };
 
+      rust-wasm-lib = {
+        path = ./rust-wasm-lib;
+        description = "Rust lib crate with wasm32-unknown-unknown target configured";
+      };
+
       typescript-fastify = {
         path = ./typescript-fastify;
         description = "Development-centered Fastify API setup using Typescript";
