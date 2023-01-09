@@ -36,7 +36,7 @@
           };
 
           devShell = with pkgs; mkShell {
-            buildInputs = [ rustWithWasmTarget rustfmt rust-analyzer rustPackages.clippy ];
+            buildInputs = [ rustWithWasmTarget rustfmt rust-analyzer rustPackages.clippy wabt ];
             RUST_SRC_PATH = rustPlatform.rustLibSrc;
             RUST_LOG = "debug";
           };
