@@ -13,18 +13,17 @@
       let
         cargoConfig = builtins.fromTOML(builtins.readFile(./Cargo.toml));
         name = cargoConfig.package.name;
-        rustVersion = "1.64.0";
-        wasmTarget = "wasm32-unknown-unknown";
         overlays = [ (import rust-overlay) ];
         pkgs = import nixpkgs { inherit system overlays; };
-        rustWithWasmTarget = pkgs.rust-bin.stable.${rustVersion}.default.override {
-          targets = [wasmTarget];
-        };
+        rustBinaries = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
         naersk-lib = pkgs.callPackage naersk {
-          cargo = rustWithWasmTarget;
-          rustc = rustWithWasmTarget;
+          cargo = rustBinaries;
+          rustc = rustBinaries;
         };
-        package = naersk-lib.buildPackage ./.;
+        package = naersk-lib.buildPackage {
+          src = ./.;
+          nativeBuildInputs = with pkgs; [ ];
+        };
       in
         {
           packages.${name} = package;
@@ -36,7 +35,12 @@
           };
 
           devShell = with pkgs; mkShell {
-            buildInputs = [ rustWithWasmTarget rustfmt rust-analyzer rustPackages.clippy wabt ];
+            buildInputs = [
+              rustBinaries # Rust-related binaries (rustc, cargo, clippy, ...)
+              binaryen     # Tools for optimizing wasm modules (wasm-* family of executables)
+              wabt         # Tools for working with wasm text format (wasm2wat, wat2wasm, ...)
+              wasmtime     # For running the wasm module through WASI (wasmtime --invoke <fn> file.wasm [...args])
+            ];
             RUST_SRC_PATH = rustPlatform.rustLibSrc;
             RUST_LOG = "debug";
           };

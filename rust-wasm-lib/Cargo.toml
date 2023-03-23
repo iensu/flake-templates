@@ -7,3 +7,11 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
+
+[profile.release]
+# Optimize wasm bundle for size
+# - https://doc.rust-lang.org/cargo/reference/profiles.html
+# - https://rustwasm.github.io/docs/book/reference/code-size.html
+lto = true
+opt-level = "z"
+strip = "debuginfo"
