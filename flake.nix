@@ -14,6 +14,11 @@
         description = "Guile project prepared for HTTP stuff";
       };
 
+      node-dev = {
+        path = ./node-dev;
+        description = "Simple node.js dev environment";
+      };
+
       python-fastapi = {
         path = ./python-fastapi;
         description = "Development-centered Python Fastapi API setup";
