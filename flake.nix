@@ -14,6 +14,11 @@
         description = "Guile project prepared for HTTP stuff";
       };
 
+      js-web = {
+        path = ./js-web;
+        description = "For web development. Provides completion for JavsScript, CSS and HTML";
+      };
+
       node-dev = {
         path = ./node-dev;
         description = "Simple node.js dev environment";
