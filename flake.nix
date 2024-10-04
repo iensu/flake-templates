@@ -39,6 +39,11 @@
         description = "Rust lib crate with wasm32-unknown-unknown target configured";
       };
 
+      rust-workspace = {
+        path = ./rust-workspace;
+        description = "A Rust workspace scaffold";
+      };
+
       typescript-fastify = {
         path = ./typescript-fastify;
         description = "Development-centered Fastify API setup using Typescript";
