@@ -39,6 +39,11 @@
         description = "Naersk-based Rust flake to build binary applications";
       };
 
+      rust-dev-env = {
+        path = ./rust-dev-env;
+        description = "Simple Rust development environment";
+      };
+
       rust-wasm-lib = {
         path = ./rust-wasm-lib;
         description = "Rust lib crate with wasm32-unknown-unknown target configured";
