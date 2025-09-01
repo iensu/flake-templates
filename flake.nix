@@ -19,6 +19,11 @@
         description = "For web development. Provides completion for JavsScript, CSS and HTML";
       };
 
+      love2d = {
+        path = ./love2d;
+        description = "For game development using LÖVE";
+      };
+
       node-dev = {
         path = ./node-dev;
         description = "Simple node.js dev environment";
