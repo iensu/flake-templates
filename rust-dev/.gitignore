@@ -1,0 +1,8 @@
+# Rust
+/target
+
+# Direnv
+.direnv
+
+# Nix flake build result
+/result

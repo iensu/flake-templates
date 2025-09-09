@@ -39,9 +39,9 @@
         description = "Naersk-based Rust flake to build binary applications";
       };
 
-      rust-dev-env = {
-        path = ./rust-dev-env;
-        description = "Simple Rust development environment";
+      rust-dev = {
+        path = ./rust-dev;
+        description = "Rust development environment";
       };
 
       rust-wasm-lib = {
