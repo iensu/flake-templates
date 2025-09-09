@@ -1,7 +1,0 @@
-[package]
-name = "crate_name"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-svg2pdf = "0.13.0"
